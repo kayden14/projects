@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher</title>
+</head>
+<body>
+   <script>
+       function rot13(str) {
+                let reg = /[a-z]/i
+                let alphabets =['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                    
+                    let alphabets13 = ['N','O','P','Q','R','S','T','U','V','W','X','Y','Z','A','B','C','D','E','F','G','H','I','J','K','L','M'];
+                    
+                let resultStr = [];
+                    for(let i=0; i<str.length; i++){
+                        for(let a =0; a<alphabets.length; a++){
+                            if(str[i] === alphabets[a]){
+                            resultStr.push(alphabets13[a]);
+                            }
+                        
+                        }
+                        if(!reg.test(str[i])){
+                            resultStr.push(str[i])
+                            }
+                    }
+                    return ( resultStr.join(""));
+                };
+
+                rot13("SERR YBIR?");
+   </script> 
+</body>
+</html>
